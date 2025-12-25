@@ -1,0 +1,14 @@
+/* App.module.css */
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex: 1; /* Pushes the footer down if you had one */
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto; /* Centers the content on the screen */
+  width: 100%;
+}
