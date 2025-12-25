@@ -30,12 +30,12 @@ const ProductCard = ({ product, addToCart, removeFromCart, cart }) => {
   const handleAdd = () => {
     addToCart(product, quantity);
     setQuantity(1);
-    alert("Added to cart!");
+    // alert("Added to cart!");
   };
 
   const handleRemove = () => {
     removeFromCart(product.id);
-    alert("Removed from cart!");
+    // alert("Removed from cart!");
   };
 
   return (

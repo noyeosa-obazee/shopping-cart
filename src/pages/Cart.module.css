@@ -1,98 +1,138 @@
-/* Cart.module.css */
 .container {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 900px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  border: 1px solid #f3f4f6;
+}
+
+.container h2 {
+  font-size: 1.8rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  color: #111827;
 }
 
 .cartList {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 1.5rem;
 }
 
 .cartItem {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border: 1px solid #eee;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.cartItem:hover {
+  border-color: #e5e7eb;
 }
 
 .cartItem img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 4px;
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  background: white;
+  padding: 5px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
 }
 
 .details {
   flex: 1;
-  margin-left: 15px;
+  margin-left: 1.5rem;
 }
 
 .details h4 {
-  margin: 0;
   font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+  color: #1f2937;
+}
+
+.details p {
+  color: #6b7280;
+  font-weight: 500;
 }
 
 .quantity {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin: 0 20px;
+  gap: 12px;
+  background: white;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-right: 2rem;
 }
 
 .quantity button {
-  background: #f0f0f0;
-  border: none;
+  background: transparent;
+  color: #374151;
+  padding: 4px;
   border-radius: 4px;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+}
+
+.quantity button:hover {
+  background-color: #f3f4f6;
 }
 
 .quantity span {
-  font-weight: bold;
-  min-width: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  width: 20px;
   text-align: center;
 }
 
 .removeBtn {
-  background: none;
-  border: none;
-  color: #ff4d4d;
-  cursor: pointer;
-  padding: 5px;
+  color: #ef4444;
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #fee2e2;
+  transition: all 0.2s;
 }
 
 .removeBtn:hover {
-  color: red;
+  background-color: #fee2e2;
+  color: #b91c1c;
 }
 
 .total {
-  margin-top: 30px;
-  border-top: 2px solid #eee;
-  padding-top: 20px;
-  text-align: right;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
 }
 
 .total h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+  font-size: 2rem;
+  font-weight: 800;
+  color: #111827;
 }
 
 .total button {
-  background-color: #2ecc71;
+  background-color: #111827;
   color: white;
-  border: none;
-  padding: 12px 30px;
+  padding: 16px 48px;
+  border-radius: 12px;
   font-size: 1.1rem;
-  border-radius: 5px;
-  cursor: pointer;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.total button:hover {
+  background-color: black;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15);
 }
