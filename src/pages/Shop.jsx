@@ -40,7 +40,7 @@ const ProductCard = ({ product, addToCart, removeFromCart, cart }) => {
 
   return (
     <div className={styles.card}>
-      <img src={product.images[0]} alt={product.slug} />
+      <img src={product.thumbnail} alt={product.title} />
       <h3>{product.title}</h3>
       <p>${product.price}</p>
 

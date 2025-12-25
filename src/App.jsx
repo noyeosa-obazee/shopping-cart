@@ -13,13 +13,14 @@ function App() {
     const fetchProductsData = async () => {
       try {
         const response = await fetch(
-          "https://api.escuelajs.co/api/v1/products"
+          "https://dummyjson.com/products/category/smartphones"
         );
 
         const data = await response.json();
 
-        setProductsData(data);
+        setProductsData(data.products);
         setLoading(false);
+        console.log(data);
       } catch (error) {
         console.error(error);
       }
