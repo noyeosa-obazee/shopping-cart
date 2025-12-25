@@ -152,3 +152,21 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .card img {
+    height: 200px;
+    padding: 1rem;
+  }
+
+  .controls button {
+    width: 40px;
+    height: 40px;
+  }
+}

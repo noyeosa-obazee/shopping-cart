@@ -136,3 +136,53 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.15);
 }
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+    margin: 1rem;
+  }
+
+  .cartItem {
+    flex-direction: column; /* Stack everything */
+    align-items: flex-start;
+    position: relative; /* So we can position the trash icon */
+  }
+
+  .cartItem img {
+    width: 100%; /* Full width image looks better on mobile stack */
+    height: 150px;
+    margin-bottom: 1rem;
+  }
+
+  .details {
+    margin-left: 0;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .quantity {
+    margin: 0;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+  }
+
+  .removeBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border: none;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .total h3 {
+    font-size: 1.5rem;
+  }
+
+  .total button {
+    width: 100%;
+  }
+}
