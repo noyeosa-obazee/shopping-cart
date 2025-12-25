@@ -1,6 +1,6 @@
 import { useOutletContext } from "react-router-dom";
 import { useState } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader2, Trash2 } from "lucide-react";
 import styles from "./Shop.module.css";
 
 const Shop = () => {
@@ -25,11 +25,15 @@ const Shop = () => {
 };
 
 const ProductCard = ({ product, addToCart, removeFromCart, cart }) => {
-  const [quantity, setQuantity] = useState(1);
+  const currentProduct = cart.find((p) => p.id === product.id);
+  const productQuantityCount = currentProduct ? currentProduct.quantity : 0;
+  const [quantity, setQuantity] = useState(
+    currentProduct ? currentProduct.quantity : 1
+  );
 
   const handleAdd = () => {
     addToCart(product, quantity);
-    setQuantity(1);
+    // setQuantity(1);
     // alert("Added to cart!");
   };
 
@@ -40,9 +44,22 @@ const ProductCard = ({ product, addToCart, removeFromCart, cart }) => {
 
   return (
     <div className={styles.card}>
+      {productQuantityCount > 0 && (
+        <button
+          className={styles.trashBtn}
+          onClick={handleRemove}
+          title="Remove from cart"
+        >
+          <Trash2 size={20} color="red" />
+        </button>
+      )}
       <img src={product.thumbnail} alt={product.title} />
       <h3>{product.title}</h3>
       <p>${product.price}</p>
+
+      {/* {productQuantityCount > 0 && (
+        <div className={styles.inCartBadge}>{productQuantityCount} in Cart</div>
+      )} */}
 
       <div className={styles.controls}>
         <button onClick={() => setQuantity((q) => Math.max(1, q - 1))}>
@@ -57,15 +74,8 @@ const ProductCard = ({ product, addToCart, removeFromCart, cart }) => {
         <button onClick={() => setQuantity((q) => q + 1)}>+</button>
       </div>
 
-      <button
-        className={styles.addBtn}
-        onClick={
-          !cart.some((p) => p.id === product.id) ? handleAdd : handleRemove
-        }
-      >
-        {!cart.some((p) => p.id === product.id)
-          ? "Add to Cart"
-          : "Remove from cart"}
+      <button className={styles.addBtn} onClick={handleAdd}>
+        {productQuantityCount > 0 ? "Add to Existing Items" : "Add to Cart"}
       </button>
     </div>
   );
